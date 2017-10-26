@@ -1,3 +1,5 @@
+ruby是纯面向对面编程的语言，其开发文档链接为：
+	http://doc.rubyfans.com/
 1：多字符
 	ruby 		不允许 2*'a'
 	python 		允许 2*'a' 输出为'aa'
@@ -18,9 +20,11 @@
 	例如：9/2   return 4
 		  9.0/2 return 4.5
 	对于ruby可以使用9.to_f/2 return 4.5
+
 6：单引号和双引号
 	python 中''和""没有太大区别，可以嵌套使用，
 	ruby   中''相当于python的r'',而""表示字符串
+
 7：字串内插（格式化输出）
 	ruby 	格式化输出为 '#{variableName}'
 	python	格式化输出为 '%s%d%f.2'%(string,int,float)
@@ -47,3 +51,26 @@
 	ruby：var1.upcase result "STOP"
 	python: var1.upper() result "STOP"
 
+12：数据类型判断
+	ruby："var".class return String
+	python：type("var") return <type 'str'>
+
+
+13：循环（简化）
+	ruby：6.times do
+		      puts("a")
+		  end
+		  result "a" "a" "a" "a" "a" "a"
+	python：for i in range(6):
+				print("a")
+			result "a" "a" "a" "a" "a" "a" 
+
+14：变量、常量声明
+	ruby：foo = 1 声明一个变量foo 其值为1 即在之后可以进行修改
+		  Foo = 2 声明一个常量Foo 其值为1 如果之后赋值 其会警告 但是会完成赋值操作
+		  		  O__O "........."
+	python：只有变量 没有常量
+
+15：内嵌命令
+	ruby：ENV 返回操作系统的环境变量
+		  RUBY_PLATFORM 返回ruby版本
