@@ -1,0 +1,54 @@
+迭代器iterator
+	3.times do#times不是time
+		puts "Good"
+	end
+
+code block
+	{puts "Hello"}#一般单行的用{}
+	do
+		puts "Hello"#多行用do...end
+		puts "Hi"
+	end
+#处理阵列people
+people = {"David","John","Mary"}
+people.each do |person|
+	puts person
+end
+
+#反复五次
+5.times {puts "Ruby rock!"}
+
+#从一数到九
+1.upto(9){|x| puts x}
+
+#迭代并造出另一个阵列
+a = ["a","b","c","d","e"]
+b = a.map{|x| x+"!"}#
+puts b.inspect
+
+#找出符合条件的值
+b = [1,2,3].find_all{|x| x%2 == 0}
+b.inspect
+
+#迭代并根据条件删除
+a = ["a","b","c","d","e"]
+a.delete_if{|x| x >= "b"}#字符与字符的比较实际上是字符对应位的比较
+
+#客制化排序？？？？？
+[2,1,3].sort!{|a,b| b<=>a}
+
+#计算总和
+(5..10).reduce{|sum,n| sum+n}
+=begin
+(5..10) 相当于python的range(5,11)
+
+for i in range(5,11):
+	if i == 5:sum = i
+	else:swum += i
+=end
+
+#找出最长字串
+longest  = ["cat","sheep","bear"].reduce do|memo,word|
+	(memo.length > word.length)?memo:word
+end
+4:22明天继续 下班~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~分割线
