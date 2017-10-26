@@ -1,0 +1,26 @@
+ruby 		不允许 2*'a'
+python 		允许 2*'a' 输出为'aa'
+
+ruby		打印输出使用puts() 命令, 小括号可以加，可以不加
+python		打印输出使用print  命令，尽量添加小括号
+
+ruby 		文件格式为rb
+python		文件格式为py
+
+ruby		跨行注释使用 =begin =end
+python 		跨行注释使用 ''' '''
+
+ruby和python的四则运算使用方式相同，同样的
+	例如：9/2   return 4
+		  9.0/2 return 4.5
+	对于ruby可以使用9.to_f/2 return 4.5
+
+python 中''和""没有太大区别，可以嵌套使用，
+ruby   中''相当于python的r'',而""表示字符串
+
+ruby 	格式化输出为 '#{variableName}'
+python	格式化输出为 '%s%d%f.2'%(string,int,float)
+
+
+ruby和python 都不支持不同类型的数据相加 
+	对于ruby
