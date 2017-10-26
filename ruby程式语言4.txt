@@ -51,4 +51,5 @@ for i in range(5,11):
 longest  = ["cat","sheep","bear"].reduce do|memo,word|
 	(memo.length > word.length)?memo:word
 end
-4:22明天继续 下班~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~分割线
+https://www.youtube.com/watch?v=OPPPGA4r1ZY的4:22
+明天继续 下班~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~分割线
