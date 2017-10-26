@@ -1,20 +1,51 @@
 OOP面向对象
-
+在python中对于函数：
+	def func():
+		dosomething
+	执行fun会返回一个fun的地址
+	执行fun()会返回函数func的返回值
+在raby中：
+	def func()
+		dosomething
+	end
+	执行func和func()得出的结果是一样的
 ruby：
 	class Person
 		@@name = "otherPeople"
 		def initialize(name)
 			@name = name
+			@abc = "ABC"
 		end
+		def getabc
+			puts @abc
+		end
+		def setabc(value)
+			@abc = value
+		end
+		=begin
+		def abc=(value)
+			@abc = value
+		end
+		而对私有变量@abc进行访问或赋值可以使用ruby自带的attr_accessor，格式如下所示，而且一般放在开头
+		attr_accessor:abc
+		=end
 		def say(word)
 			puts("#{word} , #{@name}")
+			puts(demo)
 		end
 		def self.say
 			puts @@name
+		private#下面跟的是私有函数，不能再函数外部调用
+		def demo
+			"demo"
+		end
 	end
 	p1 = Person.new("ihower")
 	p1.say("Hello")
 	Person.say
+	p1.abc #错误的方式
+	p1.getabc
+	p1.setabc("xyz") #
 
 python：
 	class Person:
@@ -26,8 +57,22 @@ python：
 	p1.say("Hello")
 
 
-资料封装
+资料封装（变量公有，私有）
 	类中会有
 		物件变量（@开头）
-		类别变量（@@开头）
+		类变量（@@开头）类似于python的私有化
 	上面俩个变量，在类外不能访问、存取
+
+	类中同样存在self方法，只能调用类变量，而物体变量可以调用类的变量，即当把类Person声明为p1之后，就可以在p1中调用Person类中存在的以@@开头的类变量
+
+方法封装（函数公有，私有）
+
+父类继承（Class继承）
+	声明一个从宠物的类，再创建两个子类继承宠物类，一个为猫，一个为狗
+		class Per:
+			attr_accessor:name,:age
+		end
+		class Cat < Pet # < 表示继承，符号左侧的继承右侧的,在这句话中表示，猫类 继承了宠物类
+		end
+		class Dog < Pet
+		end
