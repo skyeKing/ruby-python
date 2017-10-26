@@ -76,3 +76,38 @@ python：
 		end
 		class Dog < Pet
 		end
+
+命名空间（module namespace）
+	module MyUntil#声明的时候记得大写首字母
+		def self.foobar
+			puts "foobar"
+		end
+	end
+	MyUntil.foobar
+
+	使用命名空间可以完成混合继承（Mixins）
+
+	module Debug
+		def who_am_i?
+			"#{self.class.name}"		
+		end
+	end
+	module Demo
+		def demo
+			"demo"
+		end
+	end
+	class Foo
+		include Debug#引用模块儿Debug
+		include Demo
+	end
+	class Bar
+		include Debug
+		include Demo
+	end
+	f1 = Foo.new
+	b1 = Bar.new
+	puts f1.who_am_i?
+	puts b1.who_am_i?
+	puts f1.demo
+	puts b1.demo
