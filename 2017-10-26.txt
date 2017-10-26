@@ -222,3 +222,53 @@ ruby是纯面向对面编程的语言，其开发文档链接为：
 			print(i)
 			i += 1
 	需要关注一点的是，在ruby中，如果在循环中使用了break，表示跳出当前循环，开始下一次循环，而在python中表示中断循环，执行循环下面的语句，如果想要达到跳入下一次循环的效果需要使用关键字continue
+
+25：真假写法
+	ruby：
+		puts("aa") if true
+		puts("bb") if nil
+
+	python:
+		if "1" : print "aa"
+
+26：格式比对（regular Expressions）
+	匹配电话号码
+	phone_num = "123-456-7890"
+	对于ruby：
+		if phone_num =~ /(\d{3})-(\d{3})-(\d{4})/
+			ext = $1
+			city = $2
+			num = $3
+		end
+	对于python：请使用正则表达式 
+	import re
+
+27：定义一个函数
+	ruby：
+		def sayHello(name)
+			result = "Hi，" + name
+			return result
+		end
+		puts sayHello('daZhuang')
+	python:
+		def sayHello(name):
+			result = "Hi，" + name
+			return result
+		print(sayHello('daZhuang'))
+
+	ruby和python都可以在函数声明的时候指定默认的值
+
+28：关于ruby中的符号?和!
+	array = [2,1,3]
+	如果表达式结尾加上?，表示回传的值为boolean（true或者false）。
+	如果表达式结尾加上!，表示会有某种副作用。
+
+	array.empty? #false 
+
+	array.sort #[1,2,3]
+	array.inspect #[2,1,3]
+
+	array.sort! #[1,2,3]
+	array.inspect #[1,2,3]
+
+	如果某一数据（在此例中为array），在调用某个方法之后，返回的是一个副本，并不会修改array本身，如果在表达式的结尾加上!，则其会修改array
