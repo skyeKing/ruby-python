@@ -74,3 +74,18 @@ ruby是纯面向对面编程的语言，其开发文档链接为：
 15：内嵌命令
 	ruby：ENV 返回操作系统的环境变量
 		  RUBY_PLATFORM 返回ruby版本
+
+16：空
+	ruby：nil在ruby中表示为空
+		  在逻辑运算中表示空
+		  除此之外，false 也表示为假
+		  其余的所有（1,0）的都表示真
+	python：True为真，1为真，列表不为空为真
+			False为假，0为假，空列表为假
+
+17：单行注解
+	ruby和python都为单行注解，不过在python中一般在文件开头的起始位置的为标注编码格式：
+	# -*- conding:utf-8 -*-
+
+18：阵列Array
+	ruby和python都可以用[]所包括的一系列的数据表示一个阵列，不过在python中叫做列表List，在ruby中叫做阵列Array，他们当中的元素数据类型都可以不保持一致 如 array1 = [1,"1",2,nil],在ruby中当用下标访问阵列中的元素时，如果下标超出，ruby会返回nil，而python会报错（# IndexError: list index out of range # ）。
