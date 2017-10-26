@@ -1,0 +1,22 @@
+OOP面向对象
+
+ruby：
+	class Person
+		def initialize(name)
+			@name = name
+		end
+		def say(word)
+			puts("#{word} , #{@name}")
+		end
+	end
+	p1 = Person.new("ihower")
+	p1.say("Hello")
+
+python：
+	class Person:
+		def __init__(self,name):
+			self.name = name
+		def say(self,word):
+			print('%s,%s'%(word,self.name))
+	p1 = person('ihower')
+	p1.say("Hello")
