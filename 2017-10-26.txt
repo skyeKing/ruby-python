@@ -89,3 +89,45 @@ ruby是纯面向对面编程的语言，其开发文档链接为：
 
 18：阵列Array
 	ruby和python都可以用[]所包括的一系列的数据表示一个阵列，不过在python中叫做列表List，在ruby中叫做阵列Array，他们当中的元素数据类型都可以不保持一致 如 array1 = [1,"1",2,nil],在ruby中当用下标访问阵列中的元素时，如果下标超出，ruby会返回nil，而python会报错（# IndexError: list index out of range # ）。
+	对于一个变量阵列 
+	ruby：array1 = [1,"1",2,nil]
+		在array1的结尾添加一个元素
+			array1.push("last") 
+			array1 << "last"
+		去掉最后一个元素
+			array1.pop() 返回值为抛弃的元素
+		查询
+			array1.last 返回阵列最后一个元素
+			array1.first 返回阵列第一个元素
+		阵列变字符串
+			array1.join('==')
+		阵列变字符串
+	python：array1 = [1,"1",2,None]
+		在array1的结尾添加一个元素
+			array1 + "last"
+			array1.extend("last")
+		去掉最后一个元素
+			array1.pop() 返回值为抛弃的元素
+		查询 通过下标
+			array1[-1] 返回列表最后一个元素
+			array1[0] 返回列表第一个元素
+		阵列变字符串
+			'=='.join(array1) 此时需要注意array1中的元素必须全部为str类型
+
+	ruby和python的对字符串的切分用法一致都是使用array1.split('==')
+
+19：循环
+	对于一个阵列
+	languages = ["Ruby","Python","CPP"]
+	ruby:
+		对阵列的每一个元素都操作
+		languages.each do |lang|
+			puts "I love #{lang}!"
+		end
+	python:
+		对阵列的每一个元素都操作
+		for each in languages"
+			print("I love %s!"%each)
+
+20：哈希表和字典
+	
