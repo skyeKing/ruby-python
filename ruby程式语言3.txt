@@ -2,15 +2,19 @@ OOP面向对象
 
 ruby：
 	class Person
+		@@name = "otherPeople"
 		def initialize(name)
 			@name = name
 		end
 		def say(word)
 			puts("#{word} , #{@name}")
 		end
+		def self.say
+			puts @@name
 	end
 	p1 = Person.new("ihower")
 	p1.say("Hello")
+	Person.say
 
 python：
 	class Person:
@@ -18,5 +22,12 @@ python：
 			self.name = name
 		def say(self,word):
 			print('%s,%s'%(word,self.name))
-	p1 = person('ihower')
+	p1 = Person('ihower')
 	p1.say("Hello")
+
+
+资料封装
+	类中会有
+		物件变量（@开头）
+		类别变量（@@开头）
+	上面俩个变量，在类外不能访问、存取
