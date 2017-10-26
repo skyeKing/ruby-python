@@ -130,4 +130,95 @@ ruby是纯面向对面编程的语言，其开发文档链接为：
 			print("I love %s!"%each)
 
 20：哈希表和字典
-	
+	ruby(hash哈希表)：
+		config = {"foo" => 123 ,"bar" => 456}
+		puts(config["foo"])
+		在使用ruby的hash哈希表的时候，一般使用字串符号Symbols作为key值，Symbols一旦被创建之后，地址就是固定的
+		可以写作：
+		config = {:foo => 123,:bar => 456}
+		也可以写作：
+		config = {foo:123,bar:456}
+		puts(config[:foo])
+		遍历哈希
+		config.each do |key,value|
+			puts("#{key} is #{value}")
+		end
+
+	python(dict字典)：
+		dict = {"foo":123,"bar":4456} 在Python中dict是关键字不能作为变量名，现在只是举例
+		print(dict["foo"])	
+		for k,v in dict.iteritems():
+			print(k,v)
+
+21：流程控制
+	逻辑运算符 
+		>(大于),
+		<（小于）,
+		>=（大于等于）,
+		<=（小于等于）,
+		!=（不等于）,
+		==（等于）,
+		&&（和）,
+		||（或）
+		用法相同
+	ruby条件判断句语法：
+		if ...
+			do something
+		elsif ...
+			do something
+		else
+			do something
+		end
+	python条件判断句语法：
+		if ...:
+			do something
+		elif ...:
+			do something
+		else:
+			do something
+
+22：三元运算
+	a跟b作比较，如果比较的结果成立（为真），输出outputA，反之输出outputB
+	ruby:
+		(a>b)?outputA:outputb
+	python：
+		a > b?outputA:outputb
+
+23：开关条件语句
+	ruby:
+		case name
+			when "John"
+				puts "Hi John"
+			when "Ryan"
+				puts "Hi Ryan"
+			else
+				puts "Hi #{name}"
+		end
+	python没有类似的语法（switch）
+
+
+24：while循环和控制循环语法
+	ruby：
+		例子1：
+			i = 0
+			while(i<10)
+				i+=1
+				next if i%2 == 0 #跳到下一次循环
+				puts i 
+			end
+		例子2：
+			i = 0
+			i += 1 until i > 10
+			puts i
+		例子3：
+			i = 0
+			loop do
+				i += 1
+				break if i > 10
+			end
+	python:
+		i = 0
+		while i < 10:
+			print(i)
+			i += 1
+	需要关注一点的是，在ruby中，如果在循环中使用了break，表示跳出当前循环，开始下一次循环，而在python中表示中断循环，执行循环下面的语句，如果想要达到跳入下一次循环的效果需要使用关键字continue
