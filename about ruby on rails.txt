@@ -13,3 +13,48 @@ framework
 
 什么是ORM（Object-relational mapping）
 	可以使用关联语法查询资料库,相对于SQL语法，较简单，直观
+
+什么样的网址适合rails开发
+	资料库网站（存取资料库，动态产生内容的网站）
+
+
+资料库DataBase
+	class CreatePeople < ActiveRecord :: Migration
+		def self.up
+			create_table :people do |t|
+				t.string :name
+				t.integer :age
+				t.date :birthday
+				t.text :bio
+				t.timestamps
+			end
+		end
+		def self.down
+			drop_table :people
+		end
+	end
+ActiveRecord(ORM机制，操作DataBase)
+	class Person < ActiveRecord::Base
+	end
+	#在person中添加一个新的资料
+	person = Person.new
+	person.name "ihower"
+	person.age = 18
+	person.save
+	#取出资料
+	person = Person.find(1)
+	puts person.name
+ActionController(处理浏览器request)
+	class PeopleCOntroller < ApplicationController
+		def index
+			@people = Person.all
+		end
+	end
+ActionView(可内嵌Ruby语法的HTML)
+<html>
+	<body>
+	<h1>Guestbook</h1>
+	<% @people.each do |person| %>
+	<p><% =person.name %>:<% =person.bio %></p>
+	</body>
+</html>
