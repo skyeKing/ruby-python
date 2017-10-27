@@ -5,8 +5,11 @@ framework
 	ORM使用物件导向语法来操作资料库
 	URL路由，自由弹性的网址
 
-	什么是MVC
-	1.一种软体架构的设计模式，将软体分为是三个部分：Module，Controller，View
+什么是MVC
+	1.一种软体架构的设计模式，将软体分为是三个部分：Model，Controller，View
 	2.Model物体包装了资料与商业逻辑（例如操作资料库）
 	3.View表示使用者界面，显示及编辑表单（可内嵌Ruby程式的HTML）
 	4.Controller负责将资料送进送出Model（处理从外界e.g.浏览器来的Request，与Model互动后输出View e.g.HTML）
+
+什么是ORM（Object-relational mapping）
+	可以使用关联语法查询资料库,相对于SQL语法，较简单，直观
